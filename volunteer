@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<!--next line is for tabs under opps-->
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 15px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+button {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#Home {background-color: powderblue;}
+#Opportunities {background-color: plum;}
+#About {background-color: mistyrose;}
+#Contact {background-color: gainsboro;}
+</style>
+</head>
+
+
+
+
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, 'powderblue')">Home</button>
+<button class="tablink" onclick="openPage('Opportunities', this, 'plum')" id="defaultOpen">Opportunities</button>
+<button class="tablink" onclick="openPage('About', this, 'mistyrose')">About</button>
+<button class="tablink" onclick="openPage('Contact', this, 'gainsboro')">Contact</button>
+
+
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+  <p>Home is where the heart is..</p>
+</div>
+
+
+
+<div id="Opportunities" class="tabcontent">
+<button onclick="myHealth()">Health</button>
+<button onclick="myChildren()">Children</button>
+<button onclick="myAnimals()">Animals</button>
+<button onclick="myEnvironment()">Environment</button>
+<button onclick="myPantry()">Pantry</button>
+<p id="demo"></p>
+  </div>
+
+<div id="About" class="tabcontent">
+    <h1 align="center">About Us</h1>
+    <div class="row">
+    <div class="column">
+      <img src="flowers.gif" alt="Snow" style="width:100%">
+    </div>
+    <div class="column">
+      <img src="happycoding.gif" alt="Forest" style="width:100%">
+    </div>
+    <div class="column">
+      <img src="flowers.gif" alt="Mountains" style="width:100%">
+    </div>
+
+    <p align="center">...</p>
+    <h5 align="center">Michelle Saidov and Tasfia Hossain, are creators of the website "Volunteer Opportunities". By learning the basics of coding in the program Girls Who Code, we were able to develop a website that allows the user to find opportunities to volunteer in around their area.</h5>
+    <p align="center">...</p>
+    <h4 align="center"><font color="black">What inspired your group to do this project?</h4>
+    <p align="center"><font color="white">When we were thinking of different project ideas, a common problem we had been trying to fulfill our required community service hours for school. However, we couldn't find events to take part in around our area. As a result, we created this website that will not only list the events people can volunteer in, but also around the area you live for your conveience. In addition, we also want people to experience different fields without the burden of getting paid. This is also a good way to give back to our community.</p>
+    <h4 align="center"><font color="black">What programming languages were used to create your website?</h4>
+    <p align="center"><font color="white">HTML, CSS, & Java Script</p>
+    <h4 align="center"><font color="black">Which Woman in Spotlight inspired your group?</h4>
+    <p align="center"><font color="white">Nobody</p>
+</div>
+
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+
+
+
+<script>
+function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+function myHealth() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+
+</script>
+
+</body>
+</html>
